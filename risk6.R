@@ -10,9 +10,9 @@ risk6 <- function(rdat)
         subsetPrimers <- unique(c(subsets[,1], subsets[,2]));
         # Get predictions for each sample
         predictions <- NULL
-        uniqueSamples <- unique(colnames(testData))
-        samples <- colnames(testData)
-        primers <- rownames(testData)
+        uniqueSamples <- unique(colnames(rdat))
+        samples <- colnames(rdat)
+        primers <- rownames(rdat)
         pairwiseScores <- matrix(0, nrow = nrow(subsets), ncol = length(uniqueSamples))
         for (sample in uniqueSamples)
         {
@@ -28,15 +28,15 @@ risk6 <- function(rdat)
                                 ratioCount <- 0
                                 for (rep in sampleReplicates)
                                 {
-                                        pIndices1 <- which(primers == primer1 & !is.na(testData[,rep]));
-                                        pIndices2 <- which(primers == primer2 & !is.na(testData[,rep]));
+                                        pIndices1 <- which(primers == primer1 & !is.na(rdat[,rep]));
+                                        pIndices2 <- which(primers == primer2 & !is.na(rdat[,rep]));
                                         
                                         for (p1 in pIndices1)
                                         {
                                                 for (p2 in pIndices2)
                                                 {
-                                                        if (!is.na(testData[p1,rep]) & !is.na(testData[p2,rep])){
-                                                                ratio <- ratio + testData[p2,rep] - testData[p1,rep]
+                                                        if (!is.na(rdat[p1,rep]) & !is.na(rdat[p2,rep])){
+                                                                ratio <- ratio + rdat[p2,rep] - rdat[p1,rep]
                                                                 ratioCount <- ratioCount + 1
                                                         }
                                                 }; rm(p2)	
