@@ -2,7 +2,7 @@ args <- commandArgs(trailingOnly = TRUE)
 
 csv_file <- args[1]
 
-pcrData <- read.csv(csv_file, header = TRUE, row.names = 1, check.names = FALSE)
+pcrData <- read.csv(csv_file, header = TRUE, row.names = 1, check.names = FALSE, sep = ";")
 
 source("risk6.R")
 risk6.results <- risk6(pcrData)
