@@ -8,5 +8,3 @@ source("risk6.R")
 risk6.results <- risk6(pcrData)
 
 write.csv(risk6.results, row.names = FALSE)
-
-#this is Argita's comment
