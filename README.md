@@ -2,7 +2,14 @@ This is a fork of the South African Tuberculosis Vaccine Initiative's R-script f
 
 ## Usage
 
+For CSV files - values separated by comma (,):
 ```bash
 cd /PATH/TO/risk6/
-Rscript run_risk6.R /PATH/TO/FILE.csv > /PATH/TO/RESULTS.csv
+Rscript run_risk6_csv.R /PATH/TO/FILE.csv > /PATH/TO/RESULTS.csv
+```
+
+For CSV2 files - values separated by semicolon (;):
+```bash
+cd /PATH/TO/risk6/
+Rscript run_risk6_csv2.R /PATH/TO/FILE.csv > /PATH/TO/RESULTS.csv
 ```
